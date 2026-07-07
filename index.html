@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Queen!</title>
+    <style>
+        body { background-color: #fce4ec; font-family: 'Arial', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { text-align: center; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 400px; width: 90%; }
+        h1 { color: #d81b60; font-size: 24px; margin-bottom: 20px; }
+        .cake-container { position: relative; height: 200px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; cursor: pointer; }
+        .candle { width: 12px; height: 50px; background: linear-gradient(to top, #ff7043, #ffb74d); border-radius: 4px; position: relative; margin-bottom: -5px; z-index: 2; }
+        .flame { width: 16px; height: 25px; background: radial-gradient(circle, #fff, #ffb300, #ff3d00); border-radius: 50% 50% 20% 20%; position: absolute; top: -22px; left: -2px; box-shadow: 0 0 10px #ff3d00; }
+        .cake { width: 160px; height: 100px; background: #5c3a21; border-radius: 10px 10px 0 0; border-top: 15px solid #fff; transition: all 1s ease; }
+        .hidden { display: none; opacity: 0; }
+        .show { display: block !important; opacity: 1; }
+        .btn { display: inline-block; padding: 15px 30px; background-color: #d81b60; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; margin-top: 20px; box-shadow: 0 5px 15px rgba(216,27,96,0.3); font-size: 16px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="interactive-part">
+        <h1>My Queen's Dream Cake 🎂</h1>
+        <p style="color: #666; font-size: 14px;">Click the Flame to Blow & Melt the Cake!</p>
+        <div class="cake-container" onclick="blowCandle()">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="cake" id="cake"></div>
+        </div>
+    </div>
+
+    <!-- Hidden Surprise Section -->
+    <div id="surprise" class="hidden">
+        <h1>Happiee Birthday My Dear Love! ❤️</h1>
+        <p style="color: #4e342e; font-size: 16px;">I have designed a special surprise for you here!</p>
+        <!-- 👇 Unga Canva link inga correct ah set panniyachu -->
+        <a href="https://canva.link/6wpukl4vd0vv37y" target="_blank" class="btn">
+            Open Your Birthday Surprise ✨
+        </a>
+    </div>
+</div>
+
+<script>
+    function blowCandle() {
+        document.querySelector('.flame').style.display = 'none';
+        const cake = document.getElementById('cake');
+        cake.style.height = '10px';
+        cake.style.backgroundColor = '#fff';
+        setTimeout(() => {
+            document.getElementById('interactive-part').style.display = 'none';
+            document.getElementById('surprise').classList.add('show');
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
